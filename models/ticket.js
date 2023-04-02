@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const UserSchema = new mongoose.Schema({
+const TicketSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true,
@@ -25,13 +25,17 @@ const UserSchema = new mongoose.Schema({
         type: String,
         required: true
     }, 
-    password:{
+    place: {
         type: String
     },
-    isin:{
-        type: Boolean,
-        default: true
+    entryType:{
+        type: String,
+        default: 'out'
+    },
+    status:{
+        type: String,
+        default: 'pending'
     }
 })
 
-module.exports = Book = mongoose.model('user', UserSchema);
+module.exports = Ticket = mongoose.model('ticket', TicketSchema);
